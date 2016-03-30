@@ -23,6 +23,7 @@
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="yXH-Yn-DkG" appends="YES" id="dAj-N2-Vvh"/>
+                                    <outletCollection property="gestureRecognizers" destination="CmR-Q8-PPh" appends="YES" id="htG-Bz-PXR"/>
                                 </connections>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="action_buttons" id="vFU-it-Ynz">
@@ -43,12 +44,71 @@
                         <outlet property="delegate" destination="mzY-mO-bue" id="rma-p0-bH8"/>
                     </connections>
                 </panGestureRecognizer>
+                <tapGestureRecognizer id="CmR-Q8-PPh">
+                    <connections>
+                        <outlet property="delegate" destination="mzY-mO-bue" id="cST-xS-OZe"/>
+                        <segue destination="qqP-DJ-O09" kind="modal" id="xUW-f7-wM1"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="114" y="321"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="875-Io-Aql">
+            <objects>
+                <viewController id="qqP-DJ-O09" customClass="ProfileViewController" customModule="TinderM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="opd-a4-MDV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nav_bar2" id="1dJ-3D-5GI">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="t1F-Ue-Mro" appends="YES" id="IL1-mO-6r8"/>
+                                </connections>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="QMs-oM-QXk">
+                                <rect key="frame" x="0.0" y="72" width="320" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name, Age" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1i1-0d-9p8">
+                                <rect key="frame" x="8" y="400" width="304" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="20"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YPq-qE-Qdr">
+                                <rect key="frame" x="8" y="432" width="304" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="aboutLabel" destination="1i1-0d-9p8" id="uyv-2v-Ttd"/>
+                        <outlet property="locationLabel" destination="YPq-qE-Qdr" id="7lj-no-2Tt"/>
+                        <outlet property="profileImageView" destination="QMs-oM-QXk" id="1Lv-bm-KPJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bLc-Hk-sft" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="t1F-Ue-Mro">
+                    <connections>
+                        <action selector="dismissProfileView:" destination="qqP-DJ-O09" id="8cn-yr-6pb"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="511" y="321"/>
         </scene>
     </scenes>
     <resources>
         <image name="action_buttons" width="320" height="108"/>
         <image name="nav_bar" width="320" height="65"/>
+        <image name="nav_bar2" width="320" height="65"/>
     </resources>
 </document>

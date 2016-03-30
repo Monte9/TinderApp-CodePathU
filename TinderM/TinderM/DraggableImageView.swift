@@ -40,6 +40,9 @@ class DraggableImageView: UIView {
         nib.instantiateWithOwner(self, options: nil)
         contentView.frame = bounds
         addSubview(contentView)
+        
+        profileImageView.layer.masksToBounds = true
+        profileImageView.layer.cornerRadius = 10
     }
     
     //Getters and setters
