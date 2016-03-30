@@ -1,6 +1,6 @@
 # Project 5 - *Tinder :heart:*
 
-**Tinder :heart:* is an iOS app that is a clone of the Tinder app.
+**Tinder :heart:** is an iOS app that is a clone of the Tinder app.
 
 Time spent: **5** hours spent in total
 
