@@ -15,8 +15,8 @@ class CardsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        cardsView.profileImage = UIImage(named: "ryan")
-        cardsView.about = "Ryan, 25"
+        cardsView.profileImage = UIImage(named: "monte")
+        cardsView.about = "Monte, 21"
     }
 
     override func didReceiveMemoryWarning() {

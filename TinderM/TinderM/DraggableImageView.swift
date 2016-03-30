@@ -54,7 +54,7 @@ class DraggableImageView: UIView {
         set { profileImageView.image = newValue }
     }
     
-    //method that rotates the image based on degree/clockwise
+    //method that rotates and pans the image
     func rotateAndTranslate(contentView: UIView, clockwise: Bool, translation: CGFloat) {
         
         let direction = clockwise ? 1 : -1
@@ -63,13 +63,14 @@ class DraggableImageView: UIView {
         contentView.transform = transformation
         
         contentView.center.x = profileImageView.center.x + translation
-        
     }
 
     //Pan Gesture Recognizer Action
     @IBAction func onImagePanGesture(sender: UIPanGestureRecognizer) {
 
         let translation = sender.translationInView(contentView)
+        
+        let delayInSeconds = 0.7
         
         initialCenterPoint = sender.view?.center
         
@@ -94,6 +95,35 @@ class DraggableImageView: UIView {
             } else if translation.x <= contentView.center.x  && point.y <= contentView.center.y {
                 //else to the left, rotate counter clockwise
                 rotateAndTranslate(self.contentView, clockwise: true, translation: translation.x)
+            }
+        } else if sender.state == UIGestureRecognizerState.Ended {
+            //animate off the screen to the right
+            if translation.x > 150 {
+                self.contentView.center.x += self.bounds.width
+                
+                let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)))
+                
+                dispatch_after(popTime, dispatch_get_main_queue(), { 
+                    print("delay complete.. displaying image back")
+                    self.contentView.transform = CGAffineTransformIdentity
+                    self.contentView.center.x = CGFloat(152)
+                })
+                
+            } else if translation.x < -150 {
+                self.contentView.center.x -= self.bounds.width
+                
+                let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)))
+                
+                dispatch_after(popTime, dispatch_get_main_queue(), {
+                    print("delay complete.. displaying image back")
+                    self.contentView.transform = CGAffineTransformIdentity
+                    self.contentView.center.x = CGFloat(152)
+                })
+                
+            } else {
+                print("reset")
+                contentView.transform = CGAffineTransformIdentity
+                contentView.center.x = CGFloat(152)
             }
         }
     }

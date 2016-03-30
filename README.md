@@ -7,18 +7,20 @@ Time spent: **5** hours spent in total
 ## User Stories
 
 The following features are implemented:
-
-- [x] :yellow_heart: :blue_heart: :purple_heart: :green_heart: :heartpulse: :heartpulse: :cupid:
+  
+- [x] :blue_heart: Pan Gesture Recognizers :yellow_heart:
+- [x] :purple_heart: Custom Views :heartpulse:
+- [x] :cupid: Affine Transform & Rotation :green_heart:
 
 ## Video Walkthrough 
 
-Coming soon 
+![Tinder iOS app walkthrough](tinder.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Coming soon
+So much :heart::heart::heart::heart::heart::heart::heart::heart::heart::heart::heart::heart:
 
 ## License
 
