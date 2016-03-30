@@ -10,45 +10,20 @@ import UIKit
 
 class CardsViewController: UIViewController {
 
-    
-    @IBOutlet weak var profileImageView: UIImageView!
-    
-    var initialCenterPoint: CGPoint?
-    var currentCenterPoint: CGPoint?
-    var prevTranslationValue: CGFloat? = 0
+    @IBOutlet weak var cardsView: DraggableImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        currentCenterPoint = profileImageView.center
-        print("The current center point is: \(currentCenterPoint)")
-        
+        cardsView.profileImage = UIImage(named: "ryan")
+        cardsView.about = "Ryan, 25"
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func onImagePanGesture(panGestureRecognizer: UIPanGestureRecognizer) {
-        
-        let translation = panGestureRecognizer.translationInView(view)
-        
-        initialCenterPoint = panGestureRecognizer.view?.center
-        
-        if panGestureRecognizer.state == UIGestureRecognizerState.Ended {
-            //set the current center to the imagecenter
-            currentCenterPoint = profileImageView.center
-        } else if panGestureRecognizer.state == UIGestureRecognizerState.Ended {
-            profileImageView.center.x = CGFloat(160)
-            print("here?")
-        } else if panGestureRecognizer.state == UIGestureRecognizerState.Changed {
-            profileImageView.center.x = profileImageView.center.x + translation.x - prevTranslationValue!
-            prevTranslationValue = translation.x
-        }
-        
-    }
-    
+
     /*
     // MARK: - Navigation
 

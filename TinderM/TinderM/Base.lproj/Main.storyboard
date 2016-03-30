@@ -17,29 +17,31 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ryan" id="eq1-R6-t9O">
-                                <rect key="frame" x="8" y="72" width="304" height="304"/>
+                            <view contentMode="scaleToFill" id="mzY-mO-bue" customClass="DraggableImageView" customModule="TinderM" customModuleProvider="target">
+                                <rect key="frame" x="8" y="72" width="304" height="356"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.94635147760000005" green="1" blue="0.73307694749999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="LpP-IC-fxj" appends="YES" id="Pai-I1-nnc"/>
+                                    <outletCollection property="gestureRecognizers" destination="yXH-Yn-DkG" appends="YES" id="dAj-N2-Vvh"/>
                                 </connections>
-                            </imageView>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="action_buttons" id="vFU-it-Ynz">
-                                <rect key="frame" x="0.0" y="421" width="320" height="108"/>
+                                <rect key="frame" x="0.0" y="436" width="320" height="108"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="profileImageView" destination="eq1-R6-t9O" id="eaY-2r-Dnv"/>
+                        <outlet property="cardsView" destination="mzY-mO-bue" id="eqc-pS-KiR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="LpP-IC-fxj">
+                <panGestureRecognizer minimumNumberOfTouches="1" id="yXH-Yn-DkG">
                     <connections>
-                        <action selector="onImagePanGesture:" destination="BYZ-38-t0r" id="soc-rz-ZSE"/>
+                        <action selector="onImagePanGesture:" destination="mzY-mO-bue" id="4aO-Tl-KSh"/>
+                        <outlet property="delegate" destination="mzY-mO-bue" id="rma-p0-bH8"/>
                     </connections>
                 </panGestureRecognizer>
             </objects>
@@ -49,6 +51,5 @@
     <resources>
         <image name="action_buttons" width="320" height="108"/>
         <image name="nav_bar" width="320" height="65"/>
-        <image name="ryan" width="449" height="514"/>
     </resources>
 </document>

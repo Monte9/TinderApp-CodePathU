@@ -12,6 +12,8 @@
 		FA4936CE1CAB773700696D85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA4936CD1CAB773700696D85 /* Assets.xcassets */; };
 		FA4936D11CAB773700696D85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA4936CF1CAB773700696D85 /* LaunchScreen.storyboard */; };
 		FA4936D91CAB783B00696D85 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4936D81CAB783B00696D85 /* CardsViewController.swift */; };
+		FA4936DB1CAB891400696D85 /* DraggableImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4936DA1CAB891400696D85 /* DraggableImageView.xib */; };
+		FA4936DD1CAB894E00696D85 /* DraggableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4936DC1CAB894E00696D85 /* DraggableImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		FA4936D01CAB773700696D85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA4936D21CAB773700696D85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA4936D81CAB783B00696D85 /* CardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
+		FA4936DA1CAB891400696D85 /* DraggableImageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DraggableImageView.xib; sourceTree = "<group>"; };
+		FA4936DC1CAB894E00696D85 /* DraggableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			children = (
 				FA4936C61CAB773700696D85 /* AppDelegate.swift */,
 				FA4936D81CAB783B00696D85 /* CardsViewController.swift */,
+				FA4936DC1CAB894E00696D85 /* DraggableImageView.swift */,
+				FA4936DA1CAB891400696D85 /* DraggableImageView.xib */,
 				FA4936CA1CAB773700696D85 /* Main.storyboard */,
 				FA4936CD1CAB773700696D85 /* Assets.xcassets */,
 				FA4936CF1CAB773700696D85 /* LaunchScreen.storyboard */,
@@ -124,6 +130,7 @@
 			files = (
 				FA4936D11CAB773700696D85 /* LaunchScreen.storyboard in Resources */,
 				FA4936CE1CAB773700696D85 /* Assets.xcassets in Resources */,
+				FA4936DB1CAB891400696D85 /* DraggableImageView.xib in Resources */,
 				FA4936CC1CAB773700696D85 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA4936C71CAB773700696D85 /* AppDelegate.swift in Sources */,
+				FA4936DD1CAB894E00696D85 /* DraggableImageView.swift in Sources */,
 				FA4936D91CAB783B00696D85 /* CardsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
