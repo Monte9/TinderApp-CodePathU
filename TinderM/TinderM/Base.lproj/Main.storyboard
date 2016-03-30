@@ -20,7 +20,6 @@
                             <view contentMode="scaleToFill" id="mzY-mO-bue" customClass="DraggableImageView" customModule="TinderM" customModuleProvider="target">
                                 <rect key="frame" x="8" y="72" width="304" height="356"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.94635147760000005" green="1" blue="0.73307694749999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="yXH-Yn-DkG" appends="YES" id="dAj-N2-Vvh"/>
