@@ -10,10 +10,19 @@ import UIKit
 
 class CardsViewController: UIViewController {
 
+    
+    @IBOutlet weak var profileImageView: UIImageView!
+    
+    var initialCenterPoint: CGPoint?
+    var currentCenterPoint: CGPoint?
+    var prevTranslationValue: CGFloat? = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        currentCenterPoint = profileImageView.center
+        print("The current center point is: \(currentCenterPoint)")
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,7 +30,25 @@ class CardsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func onImagePanGesture(panGestureRecognizer: UIPanGestureRecognizer) {
+        
+        let translation = panGestureRecognizer.translationInView(view)
+        
+        initialCenterPoint = panGestureRecognizer.view?.center
+        
+        if panGestureRecognizer.state == UIGestureRecognizerState.Ended {
+            //set the current center to the imagecenter
+            currentCenterPoint = profileImageView.center
+        } else if panGestureRecognizer.state == UIGestureRecognizerState.Ended {
+            profileImageView.center.x = CGFloat(160)
+            print("here?")
+        } else if panGestureRecognizer.state == UIGestureRecognizerState.Changed {
+            profileImageView.center.x = profileImageView.center.x + translation.x - prevTranslationValue!
+            prevTranslationValue = translation.x
+        }
+        
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -31,5 +58,4 @@ class CardsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
